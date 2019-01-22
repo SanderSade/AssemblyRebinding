@@ -1,6 +1,6 @@
 ## AssemblyRebinding
 
-If you are have been programming .NET for a while, chances are that these are very familiar messages:
+If you are have been programming .NET, chances are that these are very familiar messages:
 
 ```
 1>  Consider app.config remapping of assembly "System.Runtime.Serialization.Primitives, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" from Version "4.0.10.0" [C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\Facades\System.Runtime.Serialization.Primitives.dll] to Version "4.2.0.0" [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Primitives.dll] to solve conflict and get rid of warning.
@@ -8,9 +8,9 @@ If you are have been programming .NET for a while, chances are that these are ve
 1>  Consider app.config remapping of assembly "System.Security.Cryptography.Algorithms, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" from Version "0.0.0.0" [] to Version "4.3.0.0" [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Algorithms.dll] to solve conflict and get rid of warning.
 ```
 
-These messages during build are especially common after changing the target .NET framework. Visual Studio is supposed to fix these by itself if `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>` is true, but unfortunately this isn't the case.
+These messages during build are especially common after changing the target .NET framework. Visual Studio is supposed to fix these by itself when `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>` in the .csproj is true, but unfortunately this isn't the case.
 
-Current AsssemblyRebinding tool processes these messages and puts out binding redirect entries suitable for App.config or Web.config:
+AsssemblyRebinding utility processes these messages and puts out the binding redirect (remapping) entries suitable for App.config or Web.config:
 
 ```
 <dependentAssembly>
@@ -27,7 +27,15 @@ Current AsssemblyRebinding tool processes these messages and puts out binding re
 </dependentAssembly>
 ```
 
-If the "from" version is 0.0.0.0, AssemblyRebinding sets maximum "oldVersion" value to 255.255.255.255, e.g. `oldVersion="0.0.0.0-255.255.255.255"`
+![AssemblyRebinding-screenshot](https://user-images.githubusercontent.com/18664267/51531845-3f98ca80-1e47-11e9-90c3-9e422902712f.png)
+
+
+* If the "from" version is 0.0.0.0, AssemblyRebinding sets maximum "oldVersion" value to 255.255.255.255, e.g. `oldVersion="0.0.0.0-255.255.255.255"`
+* I recommended to run in NuGet Package Manager Console the redirect updating command, `Add-BindingRedirect *` after adding binding redirects
+* .NET 4.6.2 or newer required to run AssemblyRebinding
+* Read more from https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/redirect-assembly-versions 
+
+
 
 #### Version info
 * 2019-01-20 Initial version
