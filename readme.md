@@ -40,4 +40,4 @@ AsssemblyRebinding utility processes these messages and puts out the binding red
 
 
 #### Version info
-* 2019-01-20 Initial version
+* 2019-01-20 1.0.0 Initial version
