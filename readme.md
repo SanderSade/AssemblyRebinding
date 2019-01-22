@@ -9,6 +9,7 @@ If you are have been programming .NET, chances are that these are very familiar 
 1>  Consider app.config remapping of assembly "System.Runtime.Serialization.Xml, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" from Version "4.0.10.0" [C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\Facades\System.Runtime.Serialization.Xml.dll] to Version "4.1.3.0" [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Xml.dll] to solve conflict and get rid of warning.
 1>  Consider app.config remapping of assembly "System.Security.Cryptography.Algorithms, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" from Version "0.0.0.0" [] to Version "4.3.0.0" [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Security.Cryptography.Algorithms.dll] to solve conflict and get rid of warning.
 ```
+![VS warning](https://raw.githubusercontent.com/dotnet/docs/master/docs/framework/configure-apps/media/clr-assemblyrefwarning.png)
 
 These messages during build are especially common after changing the target .NET framework. Visual Studio is supposed to fix these by itself when `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>` in the .csproj is true, but unfortunately this isn't the case.
 
