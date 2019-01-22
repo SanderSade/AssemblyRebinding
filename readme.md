@@ -1,5 +1,7 @@
 ## AssemblyRebinding
 
+[Get AssemblyRebinding from Releases](https://github.com/SanderSade/AssemblyRebinding/releases)
+
 If you are have been programming .NET, chances are that these are very familiar messages:
 
 ```
