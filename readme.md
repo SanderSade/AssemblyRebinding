@@ -2,7 +2,7 @@
 
 [Get AssemblyRebinding from Releases](https://github.com/SanderSade/AssemblyRebinding/releases)
 
-If you are have been programming .NET, chances are that these are very familiar messages:
+If you have been programming .NET, chances are that these are very familiar messages:
 
 ```
 1>  Consider app.config remapping of assembly "System.Runtime.Serialization.Primitives, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" from Version "4.0.10.0" [C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\Facades\System.Runtime.Serialization.Primitives.dll] to Version "4.2.0.0" [C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\MSBuild\Microsoft\Microsoft.NET.Build.Extensions\net461\lib\System.Runtime.Serialization.Primitives.dll] to solve conflict and get rid of warning.
